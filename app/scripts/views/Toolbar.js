@@ -130,6 +130,10 @@ define([
         tableNotes = true;
       }
 
+      if (this.table === '115') {
+        tableNotes = true;
+      }
+
       this.$el.html(this.template({
           table: this.table,
           tableNotes: tableNotes,

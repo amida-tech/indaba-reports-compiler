@@ -86,7 +86,6 @@ define([
 
       if (params.table === '107') {
         query = _.str.sprintf(QUERY_NOTES, {
-          id: '107',
           table: params.table,
           targets: (params.targets && params.targets !== 'all') ?  _.str.sprintf('AND dnorm.targetid IN (%s)', targets) : '',
           questions: (params.questions && params.questions !== 'all') ? _.str.sprintf('AND criterias.aspectid IN (%s)', questions) : '',
@@ -101,22 +100,6 @@ define([
         });
       }
 
-      if (params.table === '115') {
-        query = _.str.sprintf(QUERY_NOTES, {
-          id: '115',
-          table: params.table,
-          targets: (params.targets && params.targets !== 'all') ?  _.str.sprintf('AND dnorm.targetid IN (%s)', targets) : '',
-          questions: (params.questions && params.questions !== 'all') ? _.str.sprintf('AND criterias.aspectid IN (%s)', questions) : '',
-          notes_targets: _.str.sprintf('AND n.targetid IN (%s)', targets),
-          notes_questions: _.str.sprintf('AND n.aspectid IN (%s)', questions),
-        });
-      } else {
-        query = _.str.sprintf(QUERY, {
-          table: params.table,
-          targets: (params.targets && params.targets !== 'all') ?  _.str.sprintf('AND dnorm.targetid IN (%s)', targets) : '',
-          questions: (params.questions && params.questions !== 'all') ? _.str.sprintf('AND criterias.aspectid IN (%s)', questions) : ''
-        });
-      }
 
 
       this.fetch({

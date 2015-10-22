@@ -1,0 +1,110 @@
+{{#each items}}
+  <section>
+    <header>
+      <div class="wrap">
+        <div class="row">
+          <div class="grid-12">
+            <h1>{{text}}</h1>
+          </div>
+        </div>
+      </div>
+    </header>
+    {{#each questions}}
+      <article>
+        <div class="mod-results-questions">
+          <div class="wrap">
+            <div class="row">
+              <div class="grid-12">
+                <h2>{{text}}</h2>
+                <div class="mod-results-buttons">
+                  {{#if map}}
+                    <a target="_blank" href="#map/{{table}}/{{id}}">Map this Question</a>
+                  {{/if}}
+                  {{!-- <a href="#rank/{{../../table}}/{{id}}">Rank</a> --}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="wrap">
+          <div class="row">
+            <div class="grid-12">
+              <ul class="mod-results-criterias is-hidden">
+                  {{#each criterias}}
+                    <li><span class="key">{{key}}</span> {{value}}</li>
+                  {{/each}}
+              </ul>
+              {{#each answers}}
+                <div class="mod-results-answers" data-id="{{id}}">
+                  <h3>{{target}}</h3>
+                  {{#if table}}
+                    <div class="table-container">
+                      {{{value}}}
+                    </div>
+                    {{else}}
+                    <div class="value-container">
+                      <span class="value">{{{value}}}</span>
+                    </div>
+                  {{/if}}
+                  {{#if score}}
+                    <p><strong>Score</strong>: {{score}}</p>
+                  {{/if}}
+                  {{#if sources}}
+                    <p class="sources">
+                      <strong>Sources</strong>: {{sources}}
+                    </p>
+                  {{/if}}
+                  {{#if comments}}
+                    <p class="comments">
+                      <strong>Comments</strong>: {{comments}}
+                    </p>
+                  {{/if}}
+                  {{#if reviews}}
+                    <div class="reviews">
+                      {{!-- <strong>Reviews:</strong> --}}
+                      <ul class="reviews-list">
+                        {{#each reviews}}
+                          <li>
+                            {{#if reviewopinion}}
+                              <h4>{{reviewuserrole}}</h4>
+                              <p><strong>Opinion</strong>: {{reviewopinion}}</p>
+                              {{#if reviewanswervalue}}
+                                <p><strong>Suggested Answer</strong>: {{reviewanswervalue}}</p>
+                              {{/if}}
+                              {{#if reviewcomments}}
+                                <p><strong>Comments</strong>: {{reviewcomments}}</p>
+                              {{/if}}
+                            {{/if}}
+                          </li>
+                        {{/each}}
+                      </ul>
+                    </div>
+                  {{/if}}
+                  {{#if notes}}
+                    <div class="notes">
+                      {{!-- <strong>Notes:</strong> --}}
+                      <ul class="notes-list">
+                        {{#each notes}}
+                          <li>
+                            {{#if notedata1}}
+                              <h4>{{notetitle1}}</h4>
+                              <p>{{notedata1}}</p>
+                            {{/if}}
+                            {{#if notedata2}}
+                              <h4>{{notetitle2}}</h4>
+                              <p>{{notedata2}}</p>
+                            {{/if}}
+                          </li>
+                        {{/each}}
+                      </ul>
+                    </div>
+                  {{/if}}
+                </div>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      </article>
+    {{/each}}
+  </section>
+{{/each}}

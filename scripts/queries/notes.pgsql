@@ -6,7 +6,7 @@ SELECT
   notetitle2,
   notedata2
 from
-  export_generic_prod_107_notes
+  export_generic_prod_%(id)_notes
 where
   %(all)s
   %(question)s

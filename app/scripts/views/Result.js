@@ -158,7 +158,8 @@ define([
 
       var result = '',
         query_question = '',
-        query_target = '';
+        query_target = '',
+        query_table = formdata.table;
 
       if (question && question !== 'all') {
         if (typeof(question) === 'string') {
@@ -183,7 +184,7 @@ define([
 
       }
 
-      this.reviewsCollection.getReviews(query_question, query_target, function(){
+      this.reviewsCollection.getReviews(query_table, query_question, query_target, function(){
         deferred.resolve();
       });
 

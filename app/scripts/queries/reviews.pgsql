@@ -6,7 +6,7 @@ SELECT
   reviewanswervalue,
   reviewcomments
 from
-  export_generic_prod_107_dp
+  export_generic_prod_%(table)s_dp
 where
   %(question)s
   %(target)s

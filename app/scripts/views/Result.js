@@ -118,7 +118,8 @@ define([
 
       var result = '',
         query_question = '',
-        query_target = '';
+        query_target = '',
+        query_table = formdata.table;
 
 
       if (question && question !== 'all') {
@@ -143,7 +144,7 @@ define([
         }
       }
 
-      this.notesCollection.getNotes(query_question, query_target, function() {
+      this.notesCollection.getNotes(query_table, query_question, query_target, function() {
         deferred.resolve();
       });
 

@@ -24,7 +24,7 @@ define([
       });
     },
 
-    getNotes: function(question, target, callback) {
+    getNotes: function(table, question, target, callback) {
       var all= '';
 
       if(!question && !target) {
@@ -36,7 +36,8 @@ define([
           q: _.str.sprintf(QUERY, {
             question: question,
             target: target,
-            all: all
+            all: all,
+            table: table,
           })
         },
         success: callback,

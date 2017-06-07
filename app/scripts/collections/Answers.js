@@ -84,7 +84,7 @@ define([
         return _.str.sprintf('\'%s\'', q);
       }).toString() : _.str.sprintf('\'%s\'', params.questions);
 
-      if (params.table === '107') {
+      if (params.table === '107' || params.table === '163') {
         query = _.str.sprintf(QUERY_NOTES, {
           table: params.table,
           targets: (params.targets && params.targets !== 'all') ?  _.str.sprintf('AND dnorm.targetid IN (%s)', targets) : '',

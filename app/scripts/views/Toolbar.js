@@ -126,7 +126,7 @@ define([
 
       this.$el.removeAttr('style');
 
-      if (this.table === '107') {
+      if (this.table === '107' || this.table === '163') {
         tableNotes = true;
       }
 

@@ -46,7 +46,7 @@ define([
       return data.rows;
     },
 
-    getReviews: function(question, target, callback) {
+    getReviews: function(table, question, target, callback) {
       var opinion;
       if (question || target) {
         opinion = 'and reviewopinion != -1';
@@ -59,7 +59,8 @@ define([
           q: _.str.sprintf(QUERY, {
             question: question,
             target: target,
-            opinion: opinion
+            opinion: opinion,
+            table: table,
           })
         },
         success: callback,
